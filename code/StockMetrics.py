@@ -1,6 +1,5 @@
 
 import statistics as stats
-
 from code.StockData import StockData
 
 
@@ -18,16 +17,29 @@ class StockMetrics(StockData):
         """
         averages = []
         for row in self.data:
-            ...
-
+            print(row)
+            new_row = [float(val) for val in row[1:] if val != "" and val != " "] 
+            avg = stats.mean(new_row)
+            averages.append(round(x, 3))
         return averages
+
 
     def median02(self):
         """pt2
         """
-        ...
+        median = []
+        for row in self.data:
+            print(row)
+            new_row = [float(val) for val in row[1:] if val != "" and val != " "] 
+            med = stats.median(new_row)
+            median.append(round(x, 3))
 
     def stddev03(self):
         """pt3
         """
-        ...
+        stddeviation = []
+        for row in self.data:
+            print(row)
+            new_row = [float(val) for val in row[1:] if val != "" and val != " "] 
+            std = stddeviation.stdev(new_row)
+            stddeviation.append(round(x, 3))
